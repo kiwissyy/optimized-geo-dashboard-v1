@@ -2,8 +2,8 @@
 
 import dynamic from "next/dynamic";
 
-// 1. LeafletMap 컴포넌트의 경로를 변수에 저장하여 Next.js 정적 분석 우회
 const LeafletMapComponentPath = "./components/LeafletMap";
+import DashboardMetrics from "./components/DashboardMetrics";
 
 const DynamicLeafletMap = dynamic(() => import(LeafletMapComponentPath), {
   ssr: false,
@@ -27,6 +27,8 @@ export default function HomePage() {
         🚀 Optimized Geo Data Dashboard (Leaflet Edition)
       </h1>
       <DynamicLeafletMap />
+
+      <DashboardMetrics />
     </main>
   );
 }

@@ -8,6 +8,13 @@ import { useSatellitePositions } from '../hooks/useSatelliteData';
 import { SatellitePosition } from '../../src/data/mockSatelliteData';
 
 
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: "leaflet/images/marker-icon-2x.png",
+  iconUrl: "leaflet/images/marker-icon.png",
+  shadowUrl: "leaflet/images/marker-shadow.png",
+});
+
 const INITIAL_MAP_OPTIONS = {
   center: [37.5, 127.0] as L.LatLngTuple, // 대한민국 중심 근처
   zoom: 11,
