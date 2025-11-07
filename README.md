@@ -6,10 +6,10 @@
 
 ## ✨ 주요 기능 및 기술 스택
 
-| **성능 최적화** | 500개 이상의 마커를 줌 레벨에 따라 하나의 클러스터로 묶어 지도 렌더링 부하 최소화 | **Leaflet Marker Cluster** |
-| **데이터 처리** | 15초마다 위성 위치 데이터를 백그라운드에서 자동 갱신하고 상태 관리 | **React Query (TanStack Query)** |
-| **아키텍처** | 클라이언트 전용 라이브러리를 SSR 환경에서 안전하게 분리하고 로드하여 충돌 방지 | **Next.js 14 (App Router), `next/dynamic` (SSR: false), `transpilePackages`** |
-| **UX/가시성** | 실시간 데이터 로딩 상태, 업데이트 시간, 총 데이터 포인트 수를 하단 UI에 표시 | **React Hooks, Custom UI** |
+| **성능 최적화** | 500개 이상의 마커를 줌 레벨에 따라 하나의 클러스터로 묶어 지도 렌더링 부하 최소화 | **Leaflet Marker Cluster** |  
+| **데이터 처리** | 15초마다 위성 위치 데이터를 백그라운드에서 자동 갱신하고 상태 관리 | **React Query (TanStack Query)** |  
+| **아키텍처** | 클라이언트 전용 라이브러리를 SSR 환경에서 안전하게 분리하고 로드하여 충돌 방지 | **Next.js 14 (App Router), `next/dynamic` (SSR: false), `transpilePackages`** |  
+| **UX/가시성** | 실시간 데이터 로딩 상태, 업데이트 시간, 총 데이터 포인트 수를 하단 UI에 표시 | **React Hooks, Custom UI** |  
 
 ---
 
@@ -60,9 +60,9 @@ npm run dev
 해결: 
 - 모든 Client Component에 'use client' 명시.
 
-**next/dynamic**의 ssr: false를 이용해 지도 컴포넌트를 분리.
+- **next/dynamic**의 ssr: false를 이용해 지도 컴포넌트를 분리.
 
-**next.config.js**의 transpilePackages 설정을 통해 Leaflet 라이브러리들을 서버 측에서 안전하게 처리하도록 강제하여 모든 충돌 문제를 완벽히 해결했습니다.
+- **next.config.js**의 transpilePackages 설정을 통해 Leaflet 라이브러리들을 서버 측에서 안전하게 처리하도록 강제하여 모든 충돌 문제를 완벽히 해결했습니다.
 
 ### 2. 대규모 데이터 시각화 최적화
 Leaflet Marker Cluster 플러그인을 사용하여 수백 개의 마커를 줌 레벨에 따라 동적 그룹화했습니다. 이를 통해 렌더링 성능을 획기적으로 개선하고 대시보드의 실사용 안정성을 확보했습니다.
