@@ -14,8 +14,8 @@ const generateMockData = (count: number): SatellitePosition[] => {
 
   for (let i = 1; i <= count; i++) {
     data.push({
-      id: `SAT-${String(i).padStart(3, '0')}`,
-      name: `Nara-SAT-${i}`,
+      id: `SAT-${String(i).padStart(3, "0")}`,
+      name: `Dum-SAT-${i}`,
       timestamp: Date.now() - Math.floor(Math.random() * 10000),
       latitude: baseLat + (Math.random() - 0.5) * 0.1,
       longitude: baseLon + (Math.random() - 0.5) * 0.1,
